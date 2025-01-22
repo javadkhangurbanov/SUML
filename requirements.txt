@@ -1,0 +1,7 @@
+streamlit
+transformers
+darts
+pandas
+numpy
+scikit-learn
+matplotlib
