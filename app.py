@@ -41,22 +41,22 @@ pages = {
 # column 1 buttons
 with col1:
     if st.button("📤 Data Upload"):
-        page_file = pages["Data Upload"]
-        st.switch_page(page_file)
+        st.switch_page(pages["Data Upload"])
 
     if st.button("🔍 Forecast Results"):
-        page_file = pages["Forecast Results"]
-        st.switch_page(page_file)
+        st.switch_page(pages["Forecast Results"])
 
 # column 2 buttons
 with col2:
     if st.button("📊 Display"):
-        page_file = pages["Display"]
-        st.switch_page(page_file)
+        st.switch_page(pages["Display"])
 
     if st.button("📤 Export Data"):
-        page_file = pages["Export Data"]
-        st.switch_page(page_file)
+        st.switch_page(pages["Export Data"])
+
+# show success message if data exists in session state
+if 'uploaded_data' in st.session_state:
+    st.success("Data has been uploaded and is accessible across pages.")
 
 # footer
 st.write("---")

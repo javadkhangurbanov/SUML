@@ -29,11 +29,20 @@ if uploaded_file is not None:
                 st.success("Found a \"date\" column")
                 st.success(f"Found numerical columns: {list(numeric_cols)}")
 
+                # store data in a session state
+                st.session_state['uploaded_data'] = data
+
                 # display the data in tabular format
                 st.write("### Uploaded Data")
                 st.dataframe(data)
 
     except Exception as e:
         st.error(f"Error reading file: {e}")
+
+# if data already exists in session state - show it
+elif 'uploaded_data' in st.session_state:
+    st.success("Data has been previously uploaded and is available.")
+    st.write("### Uploaded Data")
+    st.dataframe(st.session_state['uploaded_data'])
 else:
     st.warning("No data uploaded yet. Your data table will appear here after submission.")
