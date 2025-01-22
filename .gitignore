@@ -1,0 +1,9 @@
+# Ignore Python virtual environments and dependency files
+venv/
+*.dll
+*.lib
+*.pkl
+*.h5
+__pycache__/
+*.log
+.DS_Store
